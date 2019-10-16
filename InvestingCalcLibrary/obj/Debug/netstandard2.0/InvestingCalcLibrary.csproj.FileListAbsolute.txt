@@ -1,0 +1,8 @@
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\bin\Debug\netstandard2.0\InvestingCalcLibrary.deps.json
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\bin\Debug\netstandard2.0\InvestingCalcLibrary.dll
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\obj\Debug\netstandard2.0\InvestingCalcLibrary.csprojAssemblyReference.cache
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\obj\Debug\netstandard2.0\InvestingCalcLibrary.AssemblyInfoInputs.cache
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\obj\Debug\netstandard2.0\InvestingCalcLibrary.AssemblyInfo.cs
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\bin\Debug\netstandard2.0\InvestingCalcLibrary.pdb
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\obj\Debug\netstandard2.0\InvestingCalcLibrary.dll
+C:\Users\Andrew\source\repos\InvestingCalcLibrary\InvestingCalcLibrary\obj\Debug\netstandard2.0\InvestingCalcLibrary.pdb
