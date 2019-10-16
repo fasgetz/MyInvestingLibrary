@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace InvestingCalcLibrary
@@ -19,7 +20,7 @@ namespace InvestingCalcLibrary
         private readonly double StartCapital; // Стартовый капитал
         private double YourCapital; // Твой капитал на данный момент
         private double CurrentPriceShare; // Текущая цена пая
-        private DateTime CurrentDate; // Текущая дата
+        private string CurrentDate; // Текущая дата
         private HtmlLogic logic; // html логика
         private double EarningSum; // Заработанная сумма
 
@@ -56,7 +57,7 @@ namespace InvestingCalcLibrary
         /// <summary>
         /// Получить текущую дату
         /// </summary>
-        public DateTime GetCurrentDate
+        public string GetCurrentDate
         {
             get => CurrentDate;
         }
@@ -137,28 +138,32 @@ namespace InvestingCalcLibrary
         /// <summary>
         /// Загрузка html страницы
         /// </summary>
-        public void LoadHtml(string url, string xpath_currentprice = "//div/table/tbody/tr/td[@class='nowrap main rublast']", string xpath_currentdate = "//div/table/thead/tr/th[@class='nowrap main']")
+        public void LoadHtml(string url)
         {
             logic = new HtmlLogic(url);
             logic.LoadHtml(); // Загружаем html страницу
 
-            // Если страница загружена, то инициализируй данные
-            if (logic.htmlLoaded == true)
-                Initialization(xpath_currentprice, xpath_currentdate);
+
         }
 
         /// <summary>
-        /// Метод для инициализации данных
+        /// Метод для инициализации данных в Xamarin
         /// </summary>
-        private void Initialization(string path_price, string path_date)
+        public void InitializationFromXamarin(string xpath_currentprice = "//div/table/tbody/tr/td[@class='nowrap main rublast']", string xpath_currentdate = "//div/table/thead/tr/th[@class='nowrap main']")
         {
-            CurrentPriceShare = MyRegex.GetDoubleValue(logic.GetSingleNode(path_price));
-            CurrentDate = Convert.ToDateTime(logic.GetSingleNode(path_date));
+            // Если страница загружена, то инициализируй данные
+            if (logic.htmlLoaded == true)
+            {
+                //CurrentPriceShare = logic.GetSingleNode(xpath_currentprice);
+                CurrentDate = logic.GetSingleNode(xpath_currentdate);
 
-            // Получаем заработанную сумму
-            EarningSum = (CurrentPriceShare - StartShareBuying) * GetCountShare;
+                CurrentPriceShare = Convert.ToDouble(logic.GetSingleNode(xpath_currentprice).Replace(" ", ""));
+                // Получаем заработанную сумму
+                EarningSum = (CurrentPriceShare - StartShareBuying) * GetCountShare;
 
-            YourCapital = StartCapital + EarningSum; // Текущий капитал = стартовая сумма + заработанная
+                YourCapital = StartCapital + EarningSum; // Текущий капитал = стартовая сумма + заработанная
+            }
+
         }
         #endregion
 

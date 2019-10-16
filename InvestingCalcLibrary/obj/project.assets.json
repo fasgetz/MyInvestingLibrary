@@ -3481,11 +3481,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrew\\source\\repos\\InvestingCalcLibrary\\InvestingCalcLibrary\\InvestingCalcLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\Andrew\\Source\\Repos\\fasgetz\\MyInvestingLibrary\\InvestingCalcLibrary\\InvestingCalcLibrary.csproj",
       "projectName": "InvestingCalcLibrary",
-      "projectPath": "C:\\Users\\Andrew\\source\\repos\\InvestingCalcLibrary\\InvestingCalcLibrary\\InvestingCalcLibrary.csproj",
+      "projectPath": "C:\\Users\\Andrew\\Source\\Repos\\fasgetz\\MyInvestingLibrary\\InvestingCalcLibrary\\InvestingCalcLibrary.csproj",
       "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andrew\\source\\repos\\InvestingCalcLibrary\\InvestingCalcLibrary\\obj\\",
+      "outputPath": "C:\\Users\\Andrew\\Source\\Repos\\fasgetz\\MyInvestingLibrary\\InvestingCalcLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
