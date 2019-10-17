@@ -146,25 +146,21 @@ namespace InvestingCalcLibrary
 
         }
 
+
         /// <summary>
-        /// Метод для инициализации данных в Xamarin
+        /// Метод для инициализации данных
         /// </summary>
-        public void InitializationFromXamarin(string xpath_currentprice = "//div/table/tbody/tr/td[@class='nowrap main rublast']", string xpath_currentdate = "//div/table/thead/tr/th[@class='nowrap main']")
+        public void Initialization(string xpath_currentprice = "//div/table/tbody/tr/td[@class='nowrap main rublast']", string xpath_currentdate = "//div/table/thead/tr/th[@class='nowrap main']")
         {
-            // Если страница загружена, то инициализируй данные
-            if (logic.htmlLoaded == true)
-            {
-                //CurrentPriceShare = logic.GetSingleNode(xpath_currentprice);
-                CurrentDate = logic.GetSingleNode(xpath_currentdate);
+            CurrentPriceShare = MyRegex.GetDoubleValue(logic.GetSingleNode(xpath_currentprice));
+            CurrentDate = logic.GetSingleNode(xpath_currentdate);
 
-                CurrentPriceShare = Convert.ToDouble(logic.GetSingleNode(xpath_currentprice).Replace(" ", ""));
-                // Получаем заработанную сумму
-                EarningSum = (CurrentPriceShare - StartShareBuying) * GetCountShare;
+            // Получаем заработанную сумму
+            EarningSum = (CurrentPriceShare - StartShareBuying) * GetCountShare;
 
-                YourCapital = StartCapital + EarningSum; // Текущий капитал = стартовая сумма + заработанная
-            }
-
+            YourCapital = StartCapital + EarningSum; // Текущий капитал = стартовая сумма + заработанная
         }
+
         #endregion
 
     }
